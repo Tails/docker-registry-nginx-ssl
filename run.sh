@@ -7,5 +7,6 @@
   --non-interactive \
   --redirect \
   --text \
+  --email ${EMAIL} \
   -d ${DOMAIN}
 ls -l ~/
