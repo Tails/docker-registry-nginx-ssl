@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# determine hostname at runtime, maybe according
+# to host specific bahaviour
+/determine_hostname.sh
+
 # prepare test cert command
 if [ "${ENV}" = "debug" ]; then
   TEST="--test-cert"

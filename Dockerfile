@@ -23,9 +23,12 @@ RUN (cd ~/ && \
      git clone https://github.com/letsencrypt/letsencrypt && \
      ~/letsencrypt/letsencrypt-auto --help)
 
-# letsencrypt runner
+# runners
 ADD run.sh /run.sh
-RUN chmod +x /run.sh
+ADD determine_hostname.sh /determine_hostname.sh
+RUN chmod +x /run.sh /determine_hostname.sh
+
+# TODO: cronjb for auto renewal
 
 # generate htpassword for basic auth
 RUN htpasswd -b -c /etc/nginx/.htpasswd ${HTPASSWD_USER} ${HTPASSWD_PASS}
