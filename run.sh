@@ -31,7 +31,7 @@ if [ "${ENV}" = "production" ]; then
   ln -s "/etc/letsencrypt/live/${DOMAIN}/privkey.pem" "/etc/nginx/ssl/docker-registry.key"
 
   # start nginx
-  nginx
+  nginx -g "daemon off;"
 
 # allow SSH debugging
 else

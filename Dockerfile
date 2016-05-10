@@ -31,4 +31,4 @@ RUN chmod +x /run.sh
 RUN htpasswd -b -c /etc/nginx/.htpasswd ${HTPASSWD_USER} ${HTPASSWD_PASS}
 
 # entrypoint
-CMD /run.sh
+CMD ["/run.sh"]
