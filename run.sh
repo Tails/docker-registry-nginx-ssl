@@ -32,7 +32,7 @@ if [ "${ENV}" = "production" ]; then
 
   # install certs in nginx
   mkdir -p /etc/nginx/ssl/ && \
-  ln -s "/etc/letsencrypt/live/${DOMAIN}/cert.pem" "/etc/nginx/ssl/docker-registry.crt" && \
+  ln -s "/etc/letsencrypt/live/${DOMAIN}/fullchain.pem" "/etc/nginx/ssl/docker-registry.crt" && \
   ln -s "/etc/letsencrypt/live/${DOMAIN}/privkey.pem" "/etc/nginx/ssl/docker-registry.key" && \
 
   # start nginx
