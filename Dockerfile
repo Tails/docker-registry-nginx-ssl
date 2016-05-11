@@ -30,6 +30,7 @@ RUN (cd ~/ && \
 ADD run.sh /run.sh
 ADD determine_hostname.sh /determine_hostname.sh
 RUN chmod +x /run.sh /determine_hostname.sh
+COPY default.conf /etc/nginx/conf.d/default.conf
 
 # TODO: cronjb for auto renewal
 
