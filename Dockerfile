@@ -14,6 +14,9 @@ ENV SERVER_NAME localhost
 # set this to "production" in impl to generate working cert
 ENV ENV debug
 
+# allow injection of script to resolve hostname
+VOLUME /determine_hostname.sh
+
 # install letsencrypt tool
 RUN apt-get update && \
     apt-get install -y git apache2-utils && \

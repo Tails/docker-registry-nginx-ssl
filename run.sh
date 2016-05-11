@@ -11,7 +11,7 @@ fi
 
 # run cert getter. the TEST env should be
 # cleared for a working cert
-~/letsencrypt/letsencrypt-auto \
+/root/letsencrypt/letsencrypt-auto \
   certonly \
   ${TEST} \
   --agree-tos \
