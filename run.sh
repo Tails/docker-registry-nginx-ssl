@@ -31,8 +31,9 @@ if [ "${ENV}" = "production" ]; then
   # TODO: check if generation worked
 
   # install certs in nginx
-  ln -s "/etc/letsencrypt/live/${DOMAIN}/cert.pem" "/etc/nginx/ssl/docker-registry.crt"
-  ln -s "/etc/letsencrypt/live/${DOMAIN}/privkey.pem" "/etc/nginx/ssl/docker-registry.key"
+  mkdir -p /etc/nginx/ssl/ && \
+  ln -s "/etc/letsencrypt/live/${DOMAIN}/cert.pem" "/etc/nginx/ssl/docker-registry.crt" && \
+  ln -s "/etc/letsencrypt/live/${DOMAIN}/privkey.pem" "/etc/nginx/ssl/docker-registry.key" && \
 
   # start nginx
   nginx -g "daemon off;"

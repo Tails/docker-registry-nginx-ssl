@@ -15,7 +15,7 @@ ENV SERVER_NAME localhost
 ENV ENV debug
 
 # allow injection of script to resolve hostname
-VOLUME /determine_hostname.sh
+#VOLUME /determine_hostname.sh
 
 # install letsencrypt tool
 RUN apt-get update && \
