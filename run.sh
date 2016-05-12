@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # generate pass based on env vars
-htpasswd -b -c /etc/nginx/.htpasswd ${HTPASSWD_USER} ${HTPASSWD_PASS}
+htpasswd -b -c /etc/nginx/.htpasswd "${HTPASSWD_USER}" "${HTPASSWD_PASS}"
 
 # determine hostname at runtime, maybe according
 # to host specific bahaviour
