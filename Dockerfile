@@ -35,7 +35,7 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 # TODO: cronjb for auto renewal
 
 # generate htpassword for basic auth
-RUN htpasswd -b -c /etc/nginx/.htpasswd ${HTPASSWD_USER} ${HTPASSWD_PASS}
+#RUN htpasswd -b -c /etc/nginx/.htpasswd ${HTPASSWD_USER} ${HTPASSWD_PASS}
 
 # entrypoint
 CMD ["/run.sh"]
