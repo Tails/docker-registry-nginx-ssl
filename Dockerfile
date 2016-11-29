@@ -19,9 +19,13 @@ ENV ENV debug
 
 # install letsencrypt tool
 RUN apt-get update && \
-    apt-get install -y git apache2-utils && \
+    apt-get install -y git apache2-utils wget && \
     apt-get clean yoself
 
+# http://askubuntu.com/questions/813859/official-nginx-trusty-ppa-gives-keyexpired-gpg-error
+RUN wget https://nginx.org/keys/nginx_signing.key -O - | apt-key add -
+
+# install letsencrypt
 RUN (cd ~/ && \
      git clone https://github.com/letsencrypt/letsencrypt && \
      ~/letsencrypt/letsencrypt-auto --help)
